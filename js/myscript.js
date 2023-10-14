@@ -17,7 +17,7 @@ btnGiocaElement.addEventListener('click', function () {
     gridElement.innerHTML = '';
 
     // tolgo la classe none a grid element
-    gridElement.classList.remove('d-none');
+    // gridElement.classList.remove('d-none');
 
     // for per creare le 100 celle ed assegnarli il numero statico
     for (let i = 0; i < 100; i++) {
@@ -28,9 +28,26 @@ btnGiocaElement.addEventListener('click', function () {
         console.log(htmlCell);
 
         gridElement.appendChild(htmlCell);
-        htmlCell.classList.add('grid-cell')
+        htmlCell.classList.add('grid-cell');
 
         htmlCell.innerHTML = cellNumber;
+    }
+
+    // recupero le cell create con js dal DOM => diventa un array
+    const cellDOMElement = document.querySelectorAll('.grid-cell');
+    console.log(cellDOMElement);
+
+    // ciclo for per assegnare ad ogni cella l'event listener click (bg-lightblue)
+    for (let k = 0; k < cellDOMElement.length; k++) {
+        const currentCellElement = cellDOMElement[k]
+        console.log(currentCellElement)
+
+        // aggiungo evento click ad ogni cell
+        currentCellElement.addEventListener('click', function(){
+            currentCellElement.classList.add('bg-blue')
+
+            console.log('ho cliccato sulla casella numero:', k + 1)
+        })
     }
 
 })

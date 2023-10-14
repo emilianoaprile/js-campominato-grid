@@ -32,9 +32,9 @@
     padding-bottom: 30px;
 }
 
-.d-none {
+/* .d-none {
     display: none;
-}
+} */
 
 .grid-cell {
     border: 1px solid black;
@@ -43,4 +43,8 @@
     display: flex;
     align-items: center;
     justify-content: center;    
+}
+
+.bg-blue {
+    background-color: aqua;
 }
